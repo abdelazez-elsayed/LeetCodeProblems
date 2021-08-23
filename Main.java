@@ -12,8 +12,20 @@ public class Main {
 
     /* Usually don't bother yourself by looking here, it's just for testing purpose (Yeah, people before JUnit lives here) */
     public static void main(String[] args) {
-        addTwoNumbersLinkedList solver = new addTwoNumbersLinkedList();
+    medianOfTwoArraysSolver();
 
+    }
+    static void medianOfTwoArraysSolver(){
+        MedianOfTwoSortedArrays median = new MedianOfTwoSortedArrays();
+        int[] nums1 = {1,3};
+        int[] nums2 = {2};
+        System.out.println(median.findMedianSortedArrays(nums1,nums2));
+    }
+
+
+
+    static void addTwoNumbersSolver(){
+        addTwoNumbersLinkedList solver = new addTwoNumbersLinkedList();
 
         /*ListNode l1 = new ListNode(2);
         l1.next  = new ListNode(4);
