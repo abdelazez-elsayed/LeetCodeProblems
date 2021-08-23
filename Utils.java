@@ -1,4 +1,6 @@
 package solutions;
+import Datastructure.ListNode;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,6 +15,17 @@ public class Utils {
              FileOutputStream fos = new FileOutputStream(outputFileName)) {
             fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
         }
+    }
+    public static void printList(ListNode node){
+        System.out.print('[');
+        if(node != null)
+            System.out.print(node.val);
+        while (node.next != null){
+            node = node.next;
+            System.out.print(","+node.val);
+
+        }
+        System.out.println("]");
     }
 
 }

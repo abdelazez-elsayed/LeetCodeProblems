@@ -1,5 +1,7 @@
 package solutions;
 
+import Datastructure.ListNode;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -9,20 +11,39 @@ import java.util.Scanner;
 public class Main {
 
     /* Usually don't bother yourself by looking here, it's just for testing purpose (Yeah, people before JUnit lives here) */
-    public static void main(String[] args) throws IOException {
-        int[] a = {1,3,5,2,4,6};
-        int[] a2 = {1,3,5,2};
+    public static void main(String[] args) {
+        addTwoNumbersLinkedList solver = new addTwoNumbersLinkedList();
 
-        Scanner scanner = new Scanner(new File("inputArr.txt"));
-        int [] arr = new int [100000];
-        int i = 0;
-        while(scanner.hasNextInt()){
-            arr[i++] = scanner.nextInt();
+
+        /*ListNode l1 = new ListNode(2);
+        l1.next  = new ListNode(4);
+        l1.next.next = new ListNode(3);
+
+        ListNode l2 = new ListNode(5);
+        l2.next = new ListNode(6);
+        l2.next.next = new ListNode(4);
+*/
+      /*  ListNode l1 =new ListNode(0);
+        ListNode l2 =new ListNode(0);*/
+        int[] numbers = {9,9,9,9};
+        ListNode l1 = new ListNode(numbers[0]);
+        ListNode node_ref = l1;
+        for(int i=1;i<numbers.length;i++){
+            node_ref.next = new ListNode(numbers[i]);
+            node_ref = node_ref.next;
         }
-        CountingInversions c = new CountingInversions();
-        int[] b = arr.clone();
-        long ans = c.countInversions(b);
-        System.out.println("From naive: "+ c.naiveCountInversions(b));
-        System.out.println("From rec: "+ ans);
+
+        int[] numbers2 = {9,9,9,9,9,9,9};
+        ListNode l2 = new ListNode(numbers2[0]);
+        node_ref = l2;
+        for(int i=1;i<numbers2.length;i++){
+            node_ref.next = new ListNode(numbers2[i]);
+            node_ref = node_ref.next;
+        }
+
+        ListNode sum  = solver.addTwoNumbers(l1,l2);
+        Utils.printList(l1);
+        Utils.printList(l2);
+        Utils.printList(sum);
     }
 }
