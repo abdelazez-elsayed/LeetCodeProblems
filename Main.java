@@ -12,8 +12,12 @@ public class Main {
 
     /* Usually don't bother yourself by looking here, it's just for testing purpose (Yeah, people before JUnit lives here) */
     public static void main(String[] args) {
-        palindromSolver();
+        zigzagSolver();
 
+    }
+    private static void zigzagSolver(){
+        ZigZagConversion zigZagConversion= new ZigZagConversion();
+       System.out.println(zigZagConversion.convert("PAYPALISHIRING",3));
     }
     private static void palindromSolver(){
         LongestPalindrome longestPalindrome = new LongestPalindrome();
