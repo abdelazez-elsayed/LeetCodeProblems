@@ -27,5 +27,23 @@ public class Utils {
         }
         System.out.println("]");
     }
+    public int binarySearch(int[] nums,int target){
+        int low=0;
+        int high=nums.length;
+        int mid;
+        while (low <= high){
+            mid = (low+high)/2;
+            if(nums[mid]==target){
+                return mid;
+            }
+            else if(nums[mid] > target){
+                high = mid;
+            }
+            else
+                low = mid;
+
+        }
+        return -1;
+    }
 
 }

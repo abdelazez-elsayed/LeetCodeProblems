@@ -12,8 +12,18 @@ public class Main {
 
     /* Usually don't bother yourself by looking here, it's just for testing purpose (Yeah, people before JUnit lives here) */
     public static void main(String[] args) {
-    medianOfTwoArraysSolver();
+        palindromSolver();
 
+    }
+    private static void palindromSolver(){
+        LongestPalindrome longestPalindrome = new LongestPalindrome();
+        System.out.println(longestPalindrome.longestPalindrome("babaddtattarrattatddetartrateedredividerb"));
+    }
+    private static void twoSumSolver(){
+        TwoSum twoSum = new TwoSum();
+        int [] n = {3,2,4};
+
+        twoSum.twoSum(n,6);
     }
     static void medianOfTwoArraysSolver(){
         MedianOfTwoSortedArrays median = new MedianOfTwoSortedArrays();
