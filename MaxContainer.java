@@ -1,10 +1,12 @@
+package solutions;
+
 class MaxContainer {
     public int maxArea(int[] height) {
         int maxArea=0;
         int area;
         int i=0;
         int j=height.length-1;
-        
+
         while(i<j){
             area = Math.min(height[i],height[j])*(j-i);
             if(area > maxArea) maxArea = area;
@@ -12,7 +14,7 @@ class MaxContainer {
                 j--;
             else
                 i++;
-                
+
         }
         return maxArea;
     }

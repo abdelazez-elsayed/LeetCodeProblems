@@ -4,16 +4,98 @@ import Datastructure.ListNode;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
     /* Usually don't bother yourself by looking here, it's just for testing purpose (Yeah, people before JUnit lives here) */
     public static void main(String[] args) {
-        zigzagSolver();
 
+        substringConc();
+    }
+    private static void substringConc(){
+        SubstringWithConcatenationOfAllWords s = new SubstringWithConcatenationOfAllWords();
+        String str = "lingmindraboofooowingdingbarrwingmonkeypoundcake";
+        String[] arr = {"fooo","barr","wing","ding","wing"};
+        List<Integer> result = s.findSubstring(str,arr);
+        for(Integer i : result){
+            System.out.println(i);
+        }
+    }
+    private static void romanToInt(){
+        RomanToInt r = new RomanToInt();
+        String[] strings = {"III","IV","VI","IX","LVIII","MCMXCIV"};
+        for(String s : strings)
+        System.out.println(s+" : "+r.romanToInt(s));
+    }
+    private static void swapKGroup(){
+        int[] arr = {1, 2, 3, 4,5};
+        ReverseNodesKGroup r = new ReverseNodesKGroup();
+        ListNode head = Utils.makeList(arr);
+        ListNode kth = r.reverseKGroup(head,1);
+        Utils.printList(kth);
+    }
+    private static void swapNodesSovler(){
+        SwapNodesInPairs s = new SwapNodesInPairs();
+        int[] arr = {1, 2, 3, 4,5,6};
+        ListNode tail;
+        ListNode head = Utils.makeList(arr);
+        ListNode newHead =s.swapPairs(head);
+        Utils.printList(newHead);
+    }
+    private static void generateParenthesesSolver(){
+        GenerateParentheses gp = new GenerateParentheses();
+        var l = gp.generateParenthesis(3);
+        for(var s : l ){
+            System.out.print(s+", ");
+        }
+    }
+
+    private static void threeClosestSumSolver(){
+        ThreeCLosestSum tcs = new ThreeCLosestSum();
+        int[] arr = {-1,2,1,-4};
+
+        int result = tcs.threeSumClosest(arr ,1 );
+        System.out.print(result);
+    }
+
+    private static void poisonousPlantsSolver(){
+        List<Integer> list = null;
+        try {
+            list = Utils.readArrayFromFile("C:\\Users\\zezo\\IdeaProjects\\LeetCodeProblems\\src\\solutions\\tt.txt");
+            System.out.print(PoisonousPlants.poisonousPlants(list));
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    private static void threeSumSolver(){
+        ThreeSum threeSums = new ThreeSum();
+       var t= threeSums.threeSum(new int[]{-4,-2,1,-5,-4,-4,4,-2,0,4,0,-2,3,1,-5,0});
+       for(var tt : t){
+           for(var ttt :tt){
+               System.out.print(ttt+" ");
+           }
+           System.out.print('\n');
+       }
+    }
+    private static void revealCardSol(){
+        RevealCardsInIncreasingOrder r = new RevealCardsInIncreasingOrder();
+        int[] arr = {17,13,11,2,3,5,7};
+        int[] arr2 = {1,1000};
+        int[] sol =r.deckRevealedIncreasing(arr);
+        System.out.print(Arrays.toString(sol));
+
+    }
+    private static void romanianSolver(){
+        RomanNumber romanNumber = new RomanNumber();
+        System.out.println(romanNumber.intToRoman(1000));
     }
     private static void zigzagSolver(){
         ZigZagConversion zigZagConversion= new ZigZagConversion();
@@ -73,3 +155,4 @@ public class Main {
         Utils.printList(sum);
     }
 }
+//////////////////////

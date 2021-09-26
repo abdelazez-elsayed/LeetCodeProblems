@@ -1,30 +1,35 @@
 package solutions;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ThreeSum {
-    public List<List<Integer>> threeSum(int[] nums) {
+    public ArrayList<List<Integer>> threeSum(int[] nums) {
         int N = nums.length;
-        List<Integer> twoSum = new LinkedList<>();
-        List<List<Integer>> threeSum = new LinkedList<>();
-        for (int i=0; i<N; i++){
-            for(int j=i+1;j<N;j++){
-                if(nums[i] != nums[j])
-                    twoSum.add(nums[i]+nums[j]);
-            }
-        }
-        for(int i=0; i<N; i++ ){
-            for(Integer integer : twoSum){
-                if(nums[i]+integer == 0){
-
+        Set<List<Integer>> threeSums = new HashSet<>();
+        if(N<3)return new ArrayList<>(threeSums);
+        Arrays.sort(nums);
+        for(int i=0; i<N-1; i++){
+            int j=i+1;
+            int k=N-1;
+            while(j<k){
+                int sum = nums[i]+nums[j]+nums[k];
+                if(sum==0){
+                    List<Integer> threeSum = new LinkedList<>();
+                    threeSum.add(nums[i]);
+                    threeSum.add(nums[j++]);
+                    threeSum.add(nums[k--]);
+                    threeSums.add(threeSum);
                 }
-
-
+                else if(sum>0)
+                    k--;
+                else
+                    j++;
 
             }
         }
-        return  threeSum;
+        return new ArrayList<>(threeSums);
     }
-}
+
+    }
+
+

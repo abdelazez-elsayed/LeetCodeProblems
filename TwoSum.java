@@ -1,39 +1,24 @@
 package solutions;
-
-import java.util.Arrays;
+import java.util.HashSet;
 
 public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
-    int[] sol = new int[2];
-    Arrays.sort(nums);
-    int targetIdx;
-    for(int i=0; i<nums.length;++i){
-        targetIdx = binarySearch(nums,target-nums[i]);
-        if(targetIdx != -1){
-            sol[0]=i;
-            sol[1]=targetIdx;
-            return sol;
+        int[] arr = new int[2];
+
+        HashSet<Integer> hs = new HashSet<>();
+
+        for(int i=0; i<nums.length; i++){
+            if(hs.contains(target-nums[i])){
+                arr[1] = i;
+                break;
+            }
+            hs.add(nums[i]);
         }
 
-    }
-    return sol;
-}
-    private int binarySearch(int[] nums,int target){
-        int low=0;
-        int high=nums.length-1;
-        int mid;
-        while (low <= high){
-            mid = (low+high)/2;
-            if(nums[mid]==target){
-                return mid;
-            }
-            else if(nums[mid] > target){
-                high = mid-1;
-            }
-            else
-                low = mid+1;
-
+        for(int i=0; i<nums.length; i++){
+            if(nums[i] == target - nums[arr[1]] && arr[1] != i)
+                arr[0] = i;
         }
-        return -1;
+        return arr;
     }
 }
