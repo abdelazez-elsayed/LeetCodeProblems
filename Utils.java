@@ -1,5 +1,6 @@
 package solutions;
 import Datastructure.ListNode;
+import Datastructure.TreeNode;
 
 import java.io.*;
 import java.net.URL;
@@ -10,19 +11,15 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Utils {
+
     public static List<Integer> readArrayFromFile(String file_path) throws FileNotFoundException {
         File f = new File(file_path);
         LinkedList<Integer> linkedList = new LinkedList<>();
-
-
             FileInputStream fis = new FileInputStream(f);
             Scanner scanner = new Scanner(fis);
             while (scanner.hasNextInt())
                 linkedList.add(scanner.nextInt());
             return linkedList;
-
-
-
     }
 
     public static void downloadFile(URL url, String outputFileName) throws IOException
@@ -62,9 +59,47 @@ public class Utils {
         }
         return -1;
     }
+    ListNode sortTwoLists(ListNode a, ListNode b){
+        if(a == null )
+            return b;
+        if(b==null)
+            return a;
+        ListNode head = new ListNode();
+        ListNode sol = head;
+        while(a != null && b !=null){
+            if(a.val < b.val){
+                head.next = new ListNode();
+                head = head.next;
+                head.val = a.val;
+                a = a.next;
+
+            }else{
+                head.next = new ListNode();
+                head = head.next;
+                head.val = b.val;
+                b = b.next;
+            }
+        }
+        while(a != null){
+            head.next = new ListNode();
+            head = head.next;
+            head.val = a.val;
+            a = a.next;
+        }
+        while(b != null){
+            head.next = new ListNode();
+            head = head.next;
+            head.val = b.val;
+            b = b.next;
+
+        }
+        return sol.next;
+
+    }
+
     public static ListNode makeList(int[] arr){
         if(arr == null)return null;
-
+        if(arr.length==0)return null;
         ListNode head=new ListNode();
         ListNode node=head;
         for(int i=0; i<arr.length; i++){

@@ -1,3 +1,7 @@
+package solutions;
+
+import java.util.Stack;
+
 class Atoi {
     public int myAtoi(String s) {
         int sign=1;
@@ -14,7 +18,6 @@ class Atoi {
             i++;
         }
         else if(s.charAt(i)=='+'){
-            sign=1;
             i++;
         }
         for(;i<n;i++){
@@ -34,4 +37,5 @@ class Atoi {
         }
         return (int)result*sign;
     }
+
 }

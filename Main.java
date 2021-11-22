@@ -1,23 +1,36 @@
 package solutions;
 
 import Datastructure.ListNode;
+import Datastructure.TreeNode;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
     /* Usually don't bother yourself by looking here, it's just for testing purpose (Yeah, people before JUnit lives here) */
     public static void main(String[] args) {
 
-        substringConc();
+    }
+
+    private static void sameTree() {
+        SameTree s = new SameTree();
+        TreeNode r1 = new TreeNode(2);
+        r1.right = new TreeNode(4);
+
+        TreeNode r2 = new TreeNode(2,new TreeNode(3),new TreeNode(4));
+        s.isSameTree(r1,r2);
+    }
+
+    private static  void miniXORSsum(){
+        MinimumXORSumOfTwoArrays m = new MinimumXORSumOfTwoArrays();
+        int[] a1 = {1,0,3};
+        int[] a2 = {5,3,4};
+        m.minimumXORSum(a1,a2);
     }
     private static void substringConc(){
         SubstringWithConcatenationOfAllWords s = new SubstringWithConcatenationOfAllWords();
