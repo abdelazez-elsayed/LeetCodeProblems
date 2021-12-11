@@ -8,7 +8,6 @@ public class TwoSum {
         int[] arr = new int[2];
 
         HashSet<Integer> hs = new HashSet<>();
-        Map<Integer,Integer> map = new HashMap<>();
 
         for(int i=0; i<nums.length; i++){
             if(hs.contains(target-nums[i])){

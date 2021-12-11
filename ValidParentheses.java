@@ -14,7 +14,8 @@ public class ValidParentheses {
                 char t = stack.peek();
                 if((c == ')' && t == '(') || (t == '[' && c==']') || ( t =='{' && c=='}') )
                     stack.pop();
-                else return false;
+                else
+                    return false;
             }
         }
         return stack.empty();

@@ -1,8 +1,12 @@
 package solutions;
 
 import Datastructure.ListNode;
+import Datastructure.TreeNode;
 
-public class SwapNodesInPairs {
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
+public class SwapNodesInPairs implements Comparator<Integer> {
 
         public ListNode swapPairs(ListNode head) {
             if(head ==null || head.next == null)return head;
@@ -25,6 +29,12 @@ public class SwapNodesInPairs {
                 }else break;
 
             }
+            PriorityQueue<TreeNode> t = new PriorityQueue<>();
             return newHead;
         }
+
+    @Override
+    public int compare(Integer o1, Integer o2) {
+        return 0;
+    }
 }

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class GenerateParentheses {
     public List<String> generateParenthesis(int n) {
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         String s = "";
         gen(list,s,n,n,n);
         return filter(list);
@@ -13,6 +13,7 @@ public class GenerateParentheses {
     private void gen(List<String> list,String s,int n_close,int n_open,int n){
         String close;
         String open;
+
         if(n_open !=0) {
             open = s + "(";
             gen(list,open,n_close,n_open-1,n);
@@ -31,7 +32,7 @@ public class GenerateParentheses {
 
     }
     private List<String> filter(List<String> list){
-        List<String> validList = new ArrayList<String>();
+        List<String> validList = new ArrayList<>();
         for(String s : list){
             if(validPren(s))
                 validList.add(s);
@@ -41,7 +42,6 @@ public class GenerateParentheses {
     }
     private boolean validPren(String s){
         int n=0;
-
         for(int i=0;i<s.length();i++){
             if(s.charAt(i) == '(')
                 n++;
@@ -50,7 +50,6 @@ public class GenerateParentheses {
                 if(n<0)
                     return false;
             }
-
         }
         return n==0 ;
     }
