@@ -13,7 +13,6 @@ public class KthLargestInStream {
 
         while(heap.size() > k)
             heap.poll();
-
     }
     public int add(int val) {
      heap.offer(val);

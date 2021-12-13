@@ -14,6 +14,8 @@ public class Main {
 
     /* Usually don't bother yourself by looking here, it's just for testing purpose (Yeah, people before JUnit lives here) */
     public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder();
+        String s = "";
 
     }
 
@@ -50,17 +52,15 @@ public class Main {
     private static void swapKGroup(){
         int[] arr = {1, 2, 3, 4,5};
         ReverseNodesKGroup r = new ReverseNodesKGroup();
-        ListNode head = Utils.makeList(arr);
+        ListNode head = ListNode.makeList(1, 2, 3, 4,5);
         ListNode kth = r.reverseKGroup(head,1);
-        Utils.printList(kth);
+        ListNode.printList(kth);
     }
     private static void swapNodesSovler(){
         SwapNodesInPairs s = new SwapNodesInPairs();
-        int[] arr = {1, 2, 3, 4,5,6};
-        ListNode tail;
-        ListNode head = Utils.makeList(arr);
+        ListNode head = ListNode.makeList(1, 2, 3, 4,5,6);
         ListNode newHead =s.swapPairs(head);
-        Utils.printList(newHead);
+        ListNode.printList(newHead);
     }
     private static void generateParenthesesSolver(){
         GenerateParentheses gp = new GenerateParentheses();
@@ -79,7 +79,7 @@ public class Main {
     }
 
     private static void poisonousPlantsSolver(){
-        List<Integer> list = null;
+        List<Integer> list;
         try {
             list = Utils.readArrayFromFile("C:\\Users\\zezo\\IdeaProjects\\LeetCodeProblems\\src\\solutions\\tt.txt");
             System.out.print(PoisonousPlants.poisonousPlants(list));
@@ -163,9 +163,9 @@ public class Main {
         }
 
         ListNode sum  = solver.addTwoNumbers(l1,l2);
-        Utils.printList(l1);
-        Utils.printList(l2);
-        Utils.printList(sum);
+        ListNode.printList(l1);
+        ListNode.printList(l2);
+        ListNode.printList(sum);
     }
 }
 //////////////////////

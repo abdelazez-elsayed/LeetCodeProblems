@@ -16,8 +16,8 @@ public class MergeKSortedLists {
         return merger(lists);
     }
     ListNode merger(ListNode[] lists){
-        List<ListNode> prev = new ArrayList();
-        List<ListNode> next = new ArrayList() ;
+        List<ListNode> prev = new ArrayList<>();
+        List<ListNode> next = new ArrayList<>() ;
         Collections.addAll(prev,lists);
         while(prev.size() != 1){
             for(int i=0;i<(prev.size()); i=i+2){
@@ -76,10 +76,10 @@ public class MergeKSortedLists {
         int[][] lists = {{},{-1,5,11},{},{6,10}};
         ListNode[] listNodes = new ListNode[lists.length];
         for(int i=0; i< lists.length;i++){
-            listNodes[i] = Utils.makeList(lists[i]);
+            listNodes[i] = ListNode.makeList(lists[i]);
         }
         MergeKSortedLists m = new MergeKSortedLists();
         ListNode node = m.mergeKLists(listNodes);
-        Utils.printList(node);
+        ListNode.printList(node);
     }
 }
