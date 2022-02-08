@@ -1,6 +1,6 @@
 package solutions;
 
-import Datastructure.ListNode;
+import solutions.Datastructure.ListNode;
 
 public class ReverseNodesKGroup {
     public ListNode reverseKGroup(ListNode head, int k) {

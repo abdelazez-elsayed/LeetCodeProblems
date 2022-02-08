@@ -1,41 +1,31 @@
 package solutions;
 
-import java.util.Stack;
-
 class Atoi {
     public int myAtoi(String s) {
-        int sign=1;
-        char c;
+        int sign = 0;
+        s = s.trim();
+        if(s.length() == 0)
+            return 0;
+        if(s.charAt(0) == '-')
+            sign = -1;
+        else if(s.charAt(0) == '+')
+            sign = 1;
         int n = s.length();
-        long result=0;
-        int i=0;
-        while(i<n && s.charAt(i) == ' ')
-            i++;
-        
-        if(i==n)return 0;
-        if(s.charAt(i) == '-'){
-            sign=-1;
-            i++;
-        }
-        else if(s.charAt(i)=='+'){
-            i++;
-        }
-        for(;i<n;i++){
-            c= s.charAt(i);
-             if(c >= 48 &&  c <= 57){
-                result = (c-48)+(result * 10);
-                if(result > Integer.MAX_VALUE){
-                   return (sign==1 ? Integer.MAX_VALUE : Integer.MIN_VALUE);
-                   
-                }
-               
+        int start;
+        start = sign == -1 ? 0 : 1 ;
+        int ans = 0;
+
+        int limit = Integer.MAX_VALUE/10;
+        for(int i = start ; i < n ; i++){
+            if(!Character.isDigit(s.charAt(i)))
+                break;
+            int dig = s.charAt(i) - '0';
+            if(ans > limit || ans == limit && dig > 7){
+                return sign == -1 ? Integer.MIN_VALUE : Integer.MAX_VALUE;
             }
-            else
-                return (int)result*sign;
-            
-            
+            ans = ans*10 + dig;
         }
-        return (int)result*sign;
+        return sign == -1 ?  -ans :  ans;
     }
 
 }

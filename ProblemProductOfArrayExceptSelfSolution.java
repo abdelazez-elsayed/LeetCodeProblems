@@ -2,30 +2,19 @@ package solutions;
 
 public class ProblemProductOfArrayExceptSelfSolution {
     public int[] productExceptSelf(int[] nums) {
-
-        int N=nums.length;
-        int[] result= new int[N];
-        //left to right multiplication
-        result[0]=nums[0];
-        for(int i=1; i<N;i++){
-
-            result[i]=result[i-1]*nums[i];
+        if(nums.length == 1)
+            return new int[] {0};
+        int n = nums.length;
+        int[] ans = new int[n];
+        ans[n-1] = 1;
+        for(int i = n-2 ; i>=0; i--){
+            ans[i] = ans[i+1]*nums[i+1];
         }
-        int tmp=1;
-
-
-        for(int i=N-1; i>=0;i--){
-            if(i!=0)
-                result[i]=result[i-1]*tmp;
-            else {
-
-                result[i] = tmp;
-            }
-
-            tmp*=nums[i];
-
+        int prefix = 1;
+        for(int i=0; i<n;i++){
+            ans[i] = prefix*ans[i];
+            prefix *= nums[i];
         }
-        return result;
-
+        return ans;
     }
 }

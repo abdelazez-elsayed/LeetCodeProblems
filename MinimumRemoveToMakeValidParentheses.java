@@ -7,8 +7,6 @@ public class MinimumRemoveToMakeValidParentheses {
         for(char c : chars){
             if(c == ')')
                 closeCount++;
-            else if(c=='(')
-                openCount++;
         }
         int remainClose = closeCount;
         int takenClose = 0;

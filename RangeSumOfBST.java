@@ -1,6 +1,6 @@
 package solutions;
 
-import Datastructure.TreeNode;
+import solutions.Datastructure.TreeNode;
 
 public class RangeSumOfBST {
     public int rangeSumBST(TreeNode root, int low, int high) {

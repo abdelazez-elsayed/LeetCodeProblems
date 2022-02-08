@@ -1,23 +1,24 @@
 package solutions;
 
+import java.util.Arrays;
+import java.util.Stack;
+
 public class MazeSolver {
     int[][] dp;
     boolean[][] visited;
 
-
+    int n,m;
     int solve(int[][] arr){
         dp = new int[arr.length][arr[0].length];
-        for(int i=0;i<arr.length;i++){
-            for(int j=0; j<arr[0].length; j++)
-                dp[i][j] = Integer.MAX_VALUE;
-        }
+        n=arr.length;
+        m=arr[0].length;
+        for (int[] ints : dp) Arrays.fill(ints, Integer.MAX_VALUE);
         visited= new boolean[arr.length][arr[0].length];
         return dp_solve(arr,0,0,0);
     }
 
     private int dp_solve(int[][] arr, int i, int j, int len) {
-        int n=arr.length;
-        int m=arr[0].length;
+
         int sol = Integer.MAX_VALUE;
 
         //if We get out of array or we going through an obstacle, then return +inf

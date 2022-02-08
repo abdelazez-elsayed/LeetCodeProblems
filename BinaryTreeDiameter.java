@@ -1,8 +1,6 @@
 package solutions;
 
-import Datastructure.TreeNode;
-
-import java.util.HashMap;
+import solutions.Datastructure.TreeNode;
 
 class BinaryTreeDiameter {
     int sol=0;

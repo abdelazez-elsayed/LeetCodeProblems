@@ -1,6 +1,4 @@
 package solutions;
-import Datastructure.ListNode;
-import Datastructure.TreeNode;
 
 import java.io.*;
 import java.net.URL;
@@ -11,7 +9,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Utils {
-
+    public static void swap(int[] nums, int i, int j)
+    {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
     public static List<Integer> readArrayFromFile(String file_path) throws FileNotFoundException {
         File f = new File(file_path);
         LinkedList<Integer> linkedList = new LinkedList<>();
@@ -49,6 +52,22 @@ public class Utils {
         }
         return -1;
     }
+    static void print_arr(int[][] arr){
+        System.out.println("-------------");
+        for(int[] a : arr){
+            for(int i : a){
+                System.out.print(i+", ");
+            }
+            System.out.println();
+        }
+        System.out.println("-------------");
 
+    }
+    int convertCharToIndex(char c){
+        if(Character.isLowerCase(c))
+            return c-'a';
+        else
+            return c - 'A' + 26;
+    }
 
 }

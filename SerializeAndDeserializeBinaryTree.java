@@ -1,6 +1,6 @@
 package solutions;
 
-import Datastructure.TreeNode;
+import solutions.Datastructure.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

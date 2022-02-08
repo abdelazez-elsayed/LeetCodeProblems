@@ -39,8 +39,8 @@ public class ZigZagConversion {
             }
         }
         StringBuilder ret = new StringBuilder();
-        for(int i=0;i<rows.length;i++){
-          ret.append(rows[i]);
+        for (StringBuilder row : rows) {
+            ret.append(row);
         }
 
         return ret.toString();

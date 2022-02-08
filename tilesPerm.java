@@ -14,6 +14,7 @@ public class tilesPerm {
     void buildString(String tiles,String prev){
         if(explored.contains(prev))
             return;
+
         explored.add(prev);
         StringBuilder sb = new StringBuilder(tiles);
         for(int i=0; i<tiles.length(); i++){

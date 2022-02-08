@@ -1,13 +1,9 @@
 package solutions;
 
-import Datastructure.ListNode;
-import Datastructure.TreeNode;
+import solutions.Datastructure.ListNode;
+import solutions.Datastructure.TreeNode;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.net.URL;
 import java.util.*;
 
 public class Main {
@@ -16,7 +12,9 @@ public class Main {
     public static void main(String[] args) {
         StringBuilder sb = new StringBuilder();
         String s = "";
-
+        TreeNode[] ts = new TreeNode[13];
+        TreeNode n;
+        Arrays.sort(ts, Comparator.comparingInt(o -> o.val));
     }
 
     private static void sameTree() {

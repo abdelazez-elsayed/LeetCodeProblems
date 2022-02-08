@@ -22,5 +22,20 @@ public class AllPossibleSubsets {
             prev.remove(prev.size()-1);
         }
     }
+    public List<List<Integer>> subsetsIterative(int[] nums) {
+        int n = nums.length;
+        List<List<Integer>> ans = new LinkedList<>();
+        int pow = 1 << n;
+        for(int i=0; i< pow; i++){
+            List<Integer> sub = new LinkedList<>();
+            for(int j=1; j<=n; j++){
+                if( (i & (1 << (j-1))) > 0)
+                    sub.add(nums[j-1]);
+            }
+            ans.add(sub);
+        }
+        return ans;
+    }
+
 
 }

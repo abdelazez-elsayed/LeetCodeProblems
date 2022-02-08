@@ -1,6 +1,6 @@
 package solutions;
 
-import Datastructure.ListNode;
+import solutions.Datastructure.ListNode;
 
 public class addTwoNumbersLinkedList {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
