@@ -1,9 +1,6 @@
 package solutions;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class RemoveInvalidParentheses {
     List<String> ans;
@@ -12,6 +9,8 @@ public class RemoveInvalidParentheses {
     int n;
     public List<String> removeInvalidParentheses(String s) {
         this.s=s;
+        Collection<Integer> c ;
+        
         n = s.length();
         int l=0,r=0;
         for(int i=0; i<s.length(); i++){

@@ -1,6 +1,6 @@
 package solutions;
 
-import solutions.Datastructure.TreeNode;
+import Datastructure.TreeNode;
 
 import java.util.*;
 

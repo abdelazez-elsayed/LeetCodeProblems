@@ -7,18 +7,17 @@ public class ReverseInteger {
         if(x == Integer.MIN_VALUE)
             return 0;
         boolean isNeg = x < 0;
-        if(isNeg) x = x * -1;
-        long res=x%10;
+        if(isNeg) x = -x;
+        int res=x%10;
         x /= 10;
         while(x > 0){
-
-            res = res * 10 + x%10;
-
+            if(res <= Integer.MAX_VALUE/10)
+                res = res * 10 + x%10;
+            else{
+                return 0;
+            }
             x /= 10;
         }
-        if(res > Integer.MAX_VALUE)
-            return 0;
-        int sol = (int)res;
-        return isNeg ? -1*sol :  sol;
+        return isNeg ? -res : res;
     }
 }

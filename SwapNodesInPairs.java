@@ -1,7 +1,7 @@
 package solutions;
 
-import solutions.Datastructure.ListNode;
-import solutions.Datastructure.TreeNode;
+import Datastructure.ListNode;
+import Datastructure.TreeNode;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;

@@ -1,6 +1,6 @@
 package solutions;
 
-import solutions.Datastructure.ListNode;
+import Datastructure.ListNode;
 
 public class RmoveNthFromEndOfList {
     public ListNode removeNthFromEnd(ListNode head, int n) {

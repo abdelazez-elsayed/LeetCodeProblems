@@ -1,7 +1,11 @@
 package solutions;
 
-import solutions.Datastructure.ListNode;
-import solutions.Datastructure.TreeNode;
+import Datastructure.ListNode;
+import Datastructure.TreeNode;
+import solutions.DPProblems.LongestPalindrome;
+import solutions.LinkedListProblems.addTwoNumbersLinkedList;
+import solutions.StringsAndPatternsProblems.GenerateParentheses;
+import solutions.TreeProblems.SameTree;
 
 import java.io.FileNotFoundException;
 import java.util.*;

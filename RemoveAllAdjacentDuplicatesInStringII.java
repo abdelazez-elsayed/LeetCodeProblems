@@ -1,5 +1,6 @@
 package solutions;
 
+import java.util.Arrays;
 import java.util.Stack;
 public class RemoveAllAdjacentDuplicatesInStringII {
     class Node{
@@ -44,6 +45,12 @@ public class RemoveAllAdjacentDuplicatesInStringII {
         String s = "deeedbbcccbdaa";
         int k = 3;
         RemoveAllAdjacentDuplicatesInStringII r = new RemoveAllAdjacentDuplicatesInStringII();
-        System.out.println(r.removeDuplicates(s,k));
+        //System.out.println(r.removeDuplicates(s,k));
+        int[] arr = {23, 33, 14, 15, 42, 28, 33, 45, 23, 34, 39, 21, 36, 23, 34, 36, 25, 9, 11, 19, 35, 24, 31, 29,
+                16, 23, 34, 24, 38, 15, 13, 35, 28};
+        Arrays.sort(arr);
+        System.out.println(Arrays.toString(arr)+",N = "+arr.length);
+        double sum = Arrays.stream(arr).reduce(Integer::sum).getAsInt();
+        System.out.println(sum/arr.length);
     }
 }
