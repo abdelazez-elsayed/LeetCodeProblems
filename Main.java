@@ -2,9 +2,23 @@ package solutions;
 
 import Datastructure.ListNode;
 import Datastructure.TreeNode;
+import Datastructure.Utils;
+import solutions.ArraysAndNumbersProblems.PoisonousPlants;
+import solutions.ArraysAndNumbersProblems.ThreeCLosestSum;
+import solutions.ArraysAndNumbersProblems.ThreeSum;
+import solutions.ArraysAndNumbersProblems.TwoSum;
 import solutions.DPProblems.LongestPalindrome;
+import solutions.DPProblems.MinimumXORSumOfTwoArrays;
+import solutions.GeneralProblems.RevealCardsInIncreasingOrder;
+import solutions.GeneralProblems.RomanNumber;
+import solutions.GeneralProblems.RomanToInt;
+import solutions.LinkedListProblems.ReverseNodesKGroup;
+import solutions.LinkedListProblems.SwapNodesInPairs;
 import solutions.LinkedListProblems.addTwoNumbersLinkedList;
+import solutions.SortingAndSearchingAndSelctionProblems.MedianOfTwoSortedArrays;
 import solutions.StringsAndPatternsProblems.GenerateParentheses;
+import solutions.StringsAndPatternsProblems.SubstringWithConcatenationOfAllWords;
+import solutions.StringsAndPatternsProblems.ZigZagConversion;
 import solutions.TreeProblems.SameTree;
 
 import java.io.FileNotFoundException;

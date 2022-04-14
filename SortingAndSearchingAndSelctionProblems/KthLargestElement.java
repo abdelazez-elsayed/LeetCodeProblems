@@ -5,7 +5,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Random;
 
-import static solutions.Utils.swap;
+import static Datastructure.Utils.swap;
 
 public class KthLargestElement {
     public int findKthLargest(int[] nums, int k) {
