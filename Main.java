@@ -25,14 +25,52 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Main {
+    static int len = 4;
+    static final char[] c = {'0','1','2','3','4','5','6','7','8','9',
+            'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
 
     /* Usually don't bother yourself by looking here, it's just for testing purpose (Yeah, people before JUnit lives here) */
     public static void main(String[] args) {
-        StringBuilder sb = new StringBuilder();
-        String s = "";
-        TreeNode[] ts = new TreeNode[13];
-        TreeNode n;
-        Arrays.sort(ts, Comparator.comparingInt(o -> o.val));
+        System.out.println("By laws = "+byLaws()+", by MontiCarlo = "+byMontiCarlo());
+    }
+    private static long byMontiCarlo(){
+        Set<String> set = new HashSet<>();
+        set.add("");
+        int ans = (int) set.stream().flatMap(e -> {
+            ArrayList<String> arr = new ArrayList<>();
+            for (char c1 : c)
+                for (char c2 : c)
+                    for (char c3 : c)
+                        for (char c4 : c)
+                            {
+                                    char[] s = {c1, c2, c3, c4};
+                                    arr.add(new String(s));
+                                }
+            return arr.stream();
+        }).filter(Main::check).count();
+        return ans;
+    }
+    private static long byLaws(){
+        long res = 1;
+        int past = 1;
+        int mkam = 1;
+        for(int i=0; i<len/2; i++) {
+            res *= 26;
+            res *= 10;
+            past *= (len-i);
+            mkam *= (i+1);
+        }
+        return res * (past/mkam);
+    }
+    private static boolean check(String e) {
+        int nc = 0 , cc = 0;
+        for(int i=0; i<len; i++){
+            if(e.charAt(i) >= 'a' && e.charAt(i) <= 'z')
+                ++cc;
+            else
+                ++nc;
+        }
+        return nc == len/2 && cc == len/2;
     }
 
     private static void sameTree() {
