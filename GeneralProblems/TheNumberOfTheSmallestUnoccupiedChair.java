@@ -2,6 +2,7 @@ package solutions.GeneralProblems;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 import java.util.PriorityQueue;
 
 public class TheNumberOfTheSmallestUnoccupiedChair {
@@ -11,7 +12,7 @@ public class TheNumberOfTheSmallestUnoccupiedChair {
         PriorityQueue<Pair> queue = new PriorityQueue<>(Comparator.comparingInt(p -> p.lv_time));
 
         int targetArriveTime = times[targetFriend][0];
-
+        List<Integer> l;
         Arrays.sort(times, Comparator.comparingInt(e -> e[0]));
         for(int i=0; i<n ; i++)
             chairs.add(i);

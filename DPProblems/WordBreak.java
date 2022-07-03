@@ -6,33 +6,32 @@ import java.util.List;
 import java.util.Set;
 
 public class WordBreak {
-    int dp[][];
+    Boolean memo[][];
     Set<String> set;
-    int n;
+    String s;
     public boolean wordBreak(String s, List<String> wordDict) {
+        this.s = s;
         set = new HashSet<>(wordDict);
-        n = s.length();
-        dp = new int[n+1][n+1];
+        int n = s.length();
+        memo = new Boolean[n+1][n+1];
 
-        for(int i=0; i<n+1; i++){
-            for(int j=0; j<n+1; j++){
-                dp[i][j]=-1;
-            }
-        }
-        dp_fun(s,0,n);
-        if(dp[0][n] != 0)
-            return true;
-        return false;
+        canBreak(0,n);
+        return memo[0][n];
     }
-    int dp_fun(String s,int i,int j){
-        if(i >= n || j >= n)
-            return dp[i][j];
-        if(dp[i][j] != -1)
-            return dp[i][j];
+    boolean canBreak(int i,int j){
+        if(memo[i][j] != null)
+            return memo[i][j];
         if(set.contains(s.substring(i,j))){
-            return dp[i][j] =1;
+            return memo[i][j] = true;
         }else{
-            return dp[i][j] = dp_fun(s,0,i)+dp_fun(s,i,n);
+            for(int k = i; k<j; k++){
+                if(set.contains(s.substring(i,k))){
+                    boolean rResult = canBreak(k,j);
+                    if(rResult)
+                        return memo[i][j] = true;
+                }
+            }
+            return memo[i][j] = false;
         }
 
     }
@@ -41,7 +40,7 @@ public class WordBreak {
         List<String> dic = new LinkedList<>();
         dic.add("leet");
         dic.add("code");
-        String s = "leetsadcode";
+        String s = "leetcode";
         System.out.println(s.substring(0,4));
         System.out.println(s.substring(4));
         WordBreak wb = new WordBreak();
